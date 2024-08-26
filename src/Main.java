@@ -11,16 +11,19 @@ public class Main {
         curso1.setTitulo("curso java");
         curso1.setDescricao("descrição curso java");
         curso1.setCargaHoraria(8);
+        curso1.setPreco(100.00);
 
         Curso curso2 = new Curso();
         curso2.setTitulo("curso js");
         curso2.setDescricao("descrição curso js");
         curso2.setCargaHoraria(4);
+        curso2.setPreco(20.0);
 
         Mentoria mentoria = new Mentoria();
         mentoria.setTitulo("mentoria de java");
         mentoria.setDescricao("descrição mentoria java");
         mentoria.setData(LocalDate.now());
+        mentoria.setPreco(0.00);
 
         /*System.out.println(curso1);
         System.out.println(curso2);
@@ -35,6 +38,8 @@ public class Main {
 
         Dev devCamila = new Dev();
         devCamila.setNome("Camila");
+        devCamila.setCarteira(150.00);
+        System.out.println("Saldo inicial da Camila: " + devCamila.getCarteira());
         devCamila.inscreverBootcamp(bootcamp);
         System.out.println("Conteúdos Inscritos Camila:" + devCamila.getConteudosInscritos());
         devCamila.progredir();
@@ -43,11 +48,16 @@ public class Main {
         System.out.println("Conteúdos Inscritos Camila:" + devCamila.getConteudosInscritos());
         System.out.println("Conteúdos Concluídos Camila:" + devCamila.getConteudosConcluidos());
         System.out.println("XP:" + devCamila.calcularTotalXp());
+        System.out.println("Carteira: " + devCamila.getCarteira());
 
+        System.out.println("");
         System.out.println("-------");
+        System.out.println("");
 
         Dev devJoao = new Dev();
         devJoao.setNome("Joao");
+        devJoao.setCarteira(200.00);
+        System.out.println("Saldo inicial do João: " + devJoao.getCarteira());
         devJoao.inscreverBootcamp(bootcamp);
         System.out.println("Conteúdos Inscritos João:" + devJoao.getConteudosInscritos());
         devJoao.progredir();
@@ -57,6 +67,7 @@ public class Main {
         System.out.println("Conteúdos Inscritos João:" + devJoao.getConteudosInscritos());
         System.out.println("Conteúdos Concluidos João:" + devJoao.getConteudosConcluidos());
         System.out.println("XP:" + devJoao.calcularTotalXp());
+        System.out.println("Saldo final do João: " + devJoao.getCarteira());
 
     }
 

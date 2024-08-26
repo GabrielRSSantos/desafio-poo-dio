@@ -11,6 +11,15 @@ public class Mentoria extends Conteudo{
         return XP_PADRAO + 20d;
     }
 
+    @Override
+    public double pagarCurso(double preco) {
+        double newPrice = preco -= this.getPreco();
+        if(newPrice < 0){
+            throw new IllegalArgumentException("Não foi possível realizar o pagamento. Saldo excedido!");
+        }
+        return newPrice;
+    }
+
     public Mentoria() {
     }
 

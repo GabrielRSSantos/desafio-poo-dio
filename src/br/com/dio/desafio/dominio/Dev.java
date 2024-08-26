@@ -1,13 +1,18 @@
 package br.com.dio.desafio.dominio;
 
 import java.util.*;
+import java.util.concurrent.ExecutionException;
 
 public class Dev {
     private String nome;
+    private double carteira;
     private Set<Conteudo> conteudosInscritos = new LinkedHashSet<>();
     private Set<Conteudo> conteudosConcluidos = new LinkedHashSet<>();
 
     public void inscreverBootcamp(Bootcamp bootcamp){
+        bootcamp.getConteudos().forEach(conteudo -> {
+            this.carteira = conteudo.pagarCurso(this.carteira);
+        });
         this.conteudosInscritos.addAll(bootcamp.getConteudos());
         bootcamp.getDevsInscritos().add(this);
     }
@@ -37,6 +42,9 @@ public class Dev {
                 .sum();*/
     }
 
+    public void depositarCarteira(double deposito){
+        this.carteira += deposito;
+    };
 
     public String getNome() {
         return nome;
@@ -60,6 +68,14 @@ public class Dev {
 
     public void setConteudosConcluidos(Set<Conteudo> conteudosConcluidos) {
         this.conteudosConcluidos = conteudosConcluidos;
+    }
+
+    public double getCarteira() {
+        return carteira;
+    }
+
+    public void setCarteira(double carteira) {
+        this.carteira = carteira;
     }
 
     @Override

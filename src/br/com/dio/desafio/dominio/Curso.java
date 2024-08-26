@@ -9,6 +9,15 @@ public class Curso extends Conteudo{
         return XP_PADRAO * cargaHoraria;
     }
 
+    @Override
+    public double pagarCurso(double preco) {
+        double newPrice = preco -= this.getPreco();
+        if(newPrice < 0){
+            throw new IllegalArgumentException("Não foi possível realizar o pagamento. Saldo excedido!");
+        }
+        return newPrice;
+    }
+
     public Curso() {
     }
 

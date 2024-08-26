@@ -6,8 +6,10 @@ public abstract class Conteudo {
 
     private String titulo;
     private String descricao;
+    private double preco;
 
     public abstract double calcularXp();
+    public abstract double pagarCurso(double preco);
 
     public String getTitulo() {
         return titulo;
@@ -23,5 +25,13 @@ public abstract class Conteudo {
 
     public void setDescricao(String descricao) {
         this.descricao = descricao;
+    }
+
+    public double getPreco() {
+        return preco;
+    }
+
+    public void setPreco(double preco) {
+        this.preco = preco;
     }
 }
